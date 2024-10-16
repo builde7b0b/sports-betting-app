@@ -1,0 +1,169 @@
+{
+  "/Users/wealthybigbean/NEW/SPORTS-BETTING/betting-app-backend": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.5",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "/Users/wealthybigbean/NEW/SPORTS-BETTING/betting-app-backend",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "infinimvp",
+      "app": "sports-better",
+      "service": "betting-app-backend",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs18.x",
+        "region": "us-east-1",
+        "stage": "dev",
+        "versionFunctions": true,
+        "environment": {
+          "IS_LOCAL": "true"
+        }
+      },
+      "functions": {
+        "userAuth": {
+          "handler": "src/handlers/auth.handler",
+          "events": [
+            {
+              "http": {
+                "path": "auth",
+                "method": "post"
+              }
+            }
+          ],
+          "name": "betting-app-backend-dev-userAuth"
+        },
+        "placeBet": {
+          "handler": "src/handlers/bet.handler",
+          "events": [
+            {
+              "http": {
+                "path": "bet/place",
+                "method": "post"
+              }
+            }
+          ],
+          "name": "betting-app-backend-dev-placeBet"
+        },
+        "getOdds": {
+          "handler": "src/handlers/odds.handler",
+          "events": [
+            {
+              "http": {
+                "path": "odds",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "betting-app-backend-dev-getOdds"
+        },
+        "hello": {
+          "handler": "src/handlers/db.hello",
+          "events": [
+            {
+              "http": {
+                "path": "hello",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "betting-app-backend-dev-hello",
+          "environment": {
+            "NODE_OPTIONS": "--enable-source-maps"
+          }
+        }
+      },
+      "custom": {
+        "serverlessPluginTypescript": {
+          "tsConfigFileLocation": "./tsconfig.json"
+        }
+      }
+    },
+    "serviceRawFile": "org: infinimvp\napp: sports-better\nservice: betting-app-backend\n\nprovider:\n  name: aws\n  runtime: nodejs18.x\n  region: us-east-1\n\nfunctions:\n  userAuth:\n    handler: src/handlers/auth.handler\n    events:\n      - http:\n          path: auth\n          method: post\n\n  placeBet:\n    handler: src/handlers/bet.handler\n    events:\n      - http:\n          path: bet/place\n          method: post\n\n  getOdds:\n    handler: src/handlers/odds.handler\n    events:\n      - http:\n          path: odds\n          method: get\n\n  hello:\n    handler: src/handlers/db.hello\n    events:\n      - http:\n          path: hello\n          method: get\n\n# plugins:\n#   - serverless-plugin-typescript\n\ncustom:\n  serverlessPluginTypescript:\n    tsConfigFileLocation: './tsconfig.json'",
+    "command": [
+      "invoke",
+      "local"
+    ],
+    "options": {
+      "function": "hello"
+    },
+    "error": null,
+    "params": {},
+    "machineId": "525568be2d54bc6ab4af6b1a61ff944c",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "7a78a370-aa9b-43c6-a4f2-47a0c38fc7dc",
+    "orgName": "infinimvp",
+    "userId": "B6hRCYNPMh2pq4Z9Qs",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": false,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "x7JMC456psqBGMjMlh",
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "infinimvp",
+    "subscription": null,
+    "userEmail": "ggives3@gmail.com",
+    "serviceProviderAwsRegion": "us-east-1",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "058264413506",
+    "projectType": "traditional",
+    "versionSf": "4.4.5",
+    "serviceProviderAwsCfStackName": "betting-app-backend-dev",
+    "integrations": {},
+    "serviceUniqueId": "arn:aws:cloudformation:us-east-1:058264413506:stack/betting-app-backend-dev/c94fa030-8a45-11ef-9683-0e888bc10f79",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:058264413506:stack/betting-app-backend-dev/c94fa030-8a45-11ef-9683-0e888bc10f79",
+    "serviceProviderAwsCfStackCreated": "2024-10-14T16:03:00.785Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "UserAuthLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:058264413506:function:betting-app-backend-dev-userAuth:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-betting-app-backend-dev-UserAuthLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "GetOddsLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:058264413506:function:betting-app-backend-dev-getOdds:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-betting-app-backend-dev-GetOddsLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "PlaceBetLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:058264413506:function:betting-app-backend-dev-placeBet:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-betting-app-backend-dev-PlaceBetLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "HelloLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:058264413506:function:betting-app-backend-dev-hello:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-betting-app-backend-dev-HelloLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://t5karut534.execute-api.us-east-1.amazonaws.com/dev",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-betting-app-backend-dev-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-us-east-1-04d83e16-5b6d",
+        "ExportName": "sls-betting-app-backend-dev-ServerlessDeploymentBucketName"
+      }
+    ]
+  }
+}

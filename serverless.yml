@@ -1,0 +1,44 @@
+org: infinimvp
+app: sports-better
+service: betting-app-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  userAuth:
+    handler: src/handlers/auth.handler
+    events:
+      - http:
+          path: auth
+          method: post
+
+  placeBet:
+    handler: src/handlers/bet.handler
+    events:
+      - http:
+          path: bet/place
+          method: post
+
+  getOdds:
+    handler: src/handlers/odds.handler
+    events:
+      - http:
+          path: odds
+          method: get
+
+  hello:
+    handler: src/handlers/db.hello
+    events:
+      - http:
+          path: hello
+          method: get
+
+# plugins:
+#   - serverless-plugin-typescript
+
+custom:
+  serverlessPluginTypescript:
+    tsConfigFileLocation: './tsconfig.json'
